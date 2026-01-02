@@ -53,12 +53,12 @@ const solutions = [
 
 export default function Solutions() {
   return (
-    <section className="py-28 bg-gray-50 relative overflow-hidden">
-      {/* subtle background accent */}
+    <section className="relative py-28 bg-gray-50 overflow-hidden">
+      {/* Background accents */}
       <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50 to-gray-100 pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(220,38,38,0.04)_0%,transparent_40%)] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6">
-
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -68,16 +68,16 @@ export default function Solutions() {
           className="text-center max-w-3xl mx-auto"
         >
           <span className="inline-block mb-4 px-4 py-1 text-sm font-semibold rounded-full bg-red-100 text-red-600">
-            What We Offer
+            Our Core Solutions
           </span>
 
           <h2 className="text-3xl md:text-4xl font-extrabold">
-            Our <span className="text-red-600">Solutions</span>
+            Transportation <span className="text-red-600">Solutions</span>
           </h2>
 
           <p className="mt-4 text-gray-600">
-            Comprehensive transportation solutions designed to move your
-            business forward with reliability and precision.
+            Comprehensive freight solutions designed to move your business
+            forward with speed, reliability, and precision.
           </p>
         </motion.div>
 
@@ -92,16 +92,21 @@ export default function Solutions() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.06 }}
-                whileHover={{ y: -6 }}
-                className="group relative bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-transparent hover:border-red-200"
+                whileHover={{ y: -4 }}
+                className="group relative bg-white rounded-2xl p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-transparent hover:border-red-200"
               >
                 {/* Icon */}
-                <div className="w-16 h-16 rounded-xl bg-red-50 flex items-center justify-center mb-6 group-hover:bg-red-600 transition">
+                <div className="w-14 h-14 rounded-xl bg-red-50 flex items-center justify-center mb-5 group-hover:bg-red-600 transition">
                   <Icon
-                    size={30}
+                    size={26}
                     className="text-red-600 group-hover:text-white transition"
                   />
                 </div>
+
+                {/* Category */}
+                <span className="inline-block mb-2 text-xs font-semibold uppercase tracking-wide text-red-600">
+                  Transportation
+                </span>
 
                 {/* Content */}
                 <h3 className="text-xl font-semibold mb-4">
@@ -112,20 +117,37 @@ export default function Solutions() {
                   {item.desc}
                 </p>
 
-                {/* CTA */}
-                <Link
-                  href={item.link}
-                  className="inline-flex items-center gap-2 text-red-600 font-semibold group-hover:gap-3 transition-all"
-                >
-                  Read more
-                  <ArrowRight size={16} />
-                </Link>
+                {/* Bottom row */}
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-400">
+                    Nationwide Coverage
+                  </span>
+
+                  <Link
+                    href={item.link}
+                    className="inline-flex items-center gap-2 text-red-600 font-semibold group-hover:gap-3 transition-all"
+                  >
+                    Learn more
+                    <ArrowRight size={16} />
+                  </Link>
+                </div>
 
                 {/* Accent bar */}
                 <span className="absolute bottom-0 left-0 h-1 w-0 bg-red-600 group-hover:w-full transition-all duration-300 rounded-b-2xl" />
               </motion.div>
             );
           })}
+        </div>
+
+        {/* CTA */}
+        <div className="mt-16 text-center">
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-3 px-8 py-3 rounded-full bg-red-600 text-white font-semibold hover:bg-red-700 transition"
+          >
+            View All Solutions
+            <ArrowRight size={18} />
+          </Link>
         </div>
       </div>
     </section>

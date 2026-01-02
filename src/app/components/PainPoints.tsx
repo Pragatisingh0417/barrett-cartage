@@ -30,7 +30,7 @@ export default function PainPoints() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-4xl mx-auto"
+          className="text-center max-w-7xl mx-auto"
         >
           <span className="inline-block mb-4 px-4 py-1 text-sm font-semibold rounded-full bg-red-100 text-red-600">
             Common Frustrations

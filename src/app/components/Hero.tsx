@@ -7,18 +7,18 @@ export default function Hero() {
     <section
       className="
         relative 
-        min-h-[85vh] sm:min-h-[90vh] lg:min-h-[95vh]
+        min-h-[85vh] sm:min-h-[90vh] lg:min-h-[100vh]
         flex items-center 
         bg-cover bg-center 
         pt-28 sm:pt-32 lg:pt-36
       "
-      style={{ backgroundImage: "url('/banner-2.jpg')" }}
+      style={{ backgroundImage: "url('/banner-3.jpg')" }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/30 to-black/20" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <div className="max-w-3xl text-center lg:text-left text-white">
+      <div className="relative z-10 max-w-8xl px-20">
+        <div className="max-w-3xl text-center lg:text-left  md:text-left text-white">
 
           {/* BADGE */}
           <motion.span
@@ -44,7 +44,7 @@ export default function Hero() {
             className="
               text-2xl sm:text-3xl md:text-5xl lg:text-6xl
               font-extrabold 
-              leading-tight
+              leading-tight 
             "
           >
             Reliable Transportation &{" "}
