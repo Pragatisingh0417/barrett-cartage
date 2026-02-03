@@ -1,120 +1,105 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Hero() {
   return (
     <section
       className="
         relative 
-        min-h-[85vh] sm:min-h-[90vh] lg:min-h-[100vh]
-        flex items-center 
-        bg-cover bg-center 
-        pt-28 sm:pt-32 lg:pt-36
+        min-h-screen 
+        flex items-center justify-center
+        bg-cover bg-center
       "
       style={{ backgroundImage: "url('/banner-3.jpg')" }}
     >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/30 to-black/20" />
+      {/* Solid Brand Overlay (replace color if needed) */}
+      <div className="absolute inset-0 bg-[#2f3f67]/90" />
 
-      <div className="relative z-10 max-w-8xl px-20">
-        <div className="max-w-3xl text-center lg:text-left  md:text-left text-white">
+      {/* Watermark Logo */}
+      <div className="absolute inset-0 flex items-center justify-center opacity-40">
+        <Image
+          src="/logo-1.png" 
+          alt="Brand Logo"
+          width={520}
+          height={300}
+          className="object-contain"
+        />
+      </div>
 
-          {/* BADGE */}
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+      {/* Content */}
+      <div className="relative z-10 px-6 text-center max-w-5xl text-white">
+
+        {/* Optional small tagline */}
+        <motion.span
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="block mt-10 mb-6 text-sm tracking-widest uppercase opacity-90"
+        >
+          Premier Transportation Partner
+        </motion.span>
+
+        {/* Main Heading */}
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="
+            text-3xl sm:text-4xl md:text-5xl lg:text-5xl
+            font-extrabold
+            leading-tight
+            tracking-wide
+          "
+        >
+          Your One-Call Transportation
+          <br />
+          <span className="block mt-2">
+            & Logistics Solution
+          </span>
+        </motion.h1>
+
+        {/* Description */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="
+            mt-8 
+            text-sm sm:text-base md:text-lg
+            text-gray-200
+            max-w-3xl
+            mx-auto
+          "
+        >
+          Providing a level of customer service and reliability that stands
+          out from the rest, and is the hallmark by which we operate every day.
+        </motion.p>
+
+        {/* CTA (optional – can remove to match screenshot exactly) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="mt-10 flex justify-center"
+        >
+          <a
+            href="/contact"
             className="
-              inline-block mb-4 sm:mb-5 
-              px-4 py-2 
-              bg-red-600/90 
-              text-xs sm:text-sm 
-              font-semibold rounded-full
+              px-10 py-4
+              rounded-full
+              bg-red-600
+              font-semibold
+              shadow-xl
+              hover:scale-105
+              transition
             "
           >
-            Trusted Transportation Partner
-          </motion.span>
+            Contact Us
+          </a>
+        </motion.div>
 
-          {/* HEADING */}
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="
-              text-2xl sm:text-3xl md:text-5xl lg:text-6xl
-              font-extrabold 
-              leading-tight 
-            "
-          >
-            Reliable Transportation &{" "}
-            <span className="block">Logistics Solutions</span>
-          </motion.h1>
-
-          {/* DESCRIPTION */}
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.7 }}
-            className="
-              mt-4 sm:mt-6 
-              text-sm sm:text-base md:text-lg
-              text-gray-200 
-              max-w-xl 
-              mx-auto lg:mx-0
-            "
-          >
-            Safe, efficient, and on-time transport services built to support
-            modern businesses and supply chains.
-          </motion.p>
-
-          {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="
-              mt-8 sm:mt-10 
-              flex flex-col sm:flex-row 
-              gap-4 
-              justify-center lg:justify-start
-            "
-          >
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              href="/contact"
-              className="
-                bg-red-600 
-                px-8 py-4 
-                rounded-full 
-                font-semibold 
-                shadow-lg
-                w-full sm:w-auto
-                text-center
-              "
-            >
-              Request a Quote
-            </motion.a>
-
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              href="/services"
-              className="
-                border border-white 
-                px-8 py-4 
-                rounded-full 
-                font-semibold 
-                hover:bg-white hover:text-black 
-                transition
-                w-full sm:w-auto
-                text-center
-              "
-            >
-              Our Services
-            </motion.a>
-          </motion.div>
-
-        </div>
       </div>
     </section>
   );
