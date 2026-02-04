@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -8,108 +8,85 @@ import { Menu, X, ChevronDown } from "lucide-react";
 /* ================= DATA ================= */
 
 const solutions = [
-  {
-    title: "Less Than Truckload",
-    href: "/services/ltl",
-    image: "/Less Than Truckload.jpg",
-  },
-  {
-    title: "Full Truckload",
-    href: "/services/ftl",
-    image: "/Less Than Truckload.jpg",
-  },
-  {
-    title: "Expedited",
-    href: "/services/expedited",
-    image: "/Less Than Truckload.jpg",
-  },
-  {
-    title: "Partial Truckload",
-    href: "/services/partial-truckload",
-    image: "/Less Than Truckload.jpg",
-  },
-  {
-    title: "Drayage Freight",
-    href: "/services/drayage",
-    image: "/Less Than Truckload.jpg",
-  },
-  {
-    title: "Cross-Border Shipping",
-    href: "/services/cross-border",
-    image: "/Less Than Truckload.jpg",
-  },
-  {
-    title: "International Air",
-    href: "/services/international-air",
-    image: "/Less Than Truckload.jpg",
-  },
-  {
-    title: "Trade Show Shipping",
-    href: "/services/trade-show",
-    image: "/Less Than Truckload.jpg",
-  },
+  { title: "Less Than Truckload", href: "/shipping-services/ltl-shipping", image: "/LTL-image.jpg" },
+  { title: "Full Truckload", href: "/services/ftl", image: "/FTL-image.jpg" },
+  { title: "Expedited", href: "/services/expedited", image: "/Expedited-image.jpg" },
+  { title: "Partial Truckload", href: "/services/partial-truckload", image: "/Partial Truckload.jpg" },
+  { title: "Drayage Freight", href: "/services/drayage", image: "/Drayage Freight-image.jpg" },
+  { title: "Cross-Border Shipping", href: "/services/cross-border", image: "/Cross-Border Freight Shipping.jpg" },
+  { title: "International Air", href: "/services/international-air", image: "/International-air.jpg" },
+  { title: "Trade Show Shipping", href: "/services/trade-show", image: "/trade Show Shipping.jpg" },
+    { title: "DHL Express ", href: "/services/trade-show", image: "/DHL Express.jpg" },
+        { title: "Flatbed Transportation Services ", href: "/services/trade-show", image: "/Flatbed Transportation Services.jpg" },
+
+            { title: "Temperature Controlled Freight Shipping ", href: "/services/trade-show", image: "/Temperature Controlled Freight Shipping.jpg" },
+
+
+  
 ];
 
 const industries = [
-  {
-    title: "Aerospace Logistics",
-    href: "/industries/aerospace",
-    image: "/Less Than Truckload.jpg",
-  },
-  {
-    title: "Pharmaceutical Transport",
-    href: "/industries/pharmaceutical",
-    image: "/Less Than Truckload.jpg",
-  },
-  {
-    title: "Food Transportation",
-    href: "/industries/food",
-    image: "/Less Than Truckload.jpg",
-  },
-  {
-    title: "Medical Logistics",
-    href: "/industries/medical",
-    image: "/Less Than Truckload.jpg",
-  },
-  {
-    title: "Retail Freight",
-    href: "/industries/retail",
-    image: "/Less Than Truckload.jpg",
-  },
+  { title: "Aerospace Logistics", href: "/industries/aerospace", image: "/Aerospace Logistics.jpg" },
+  { title: "Pharmaceutical Transport", href: "/industries/pharmaceutical", image: "/Pharmaceutical Logistics.jpg" },
+  { title: "Food Transportation", href: "/industries/food", image: "/Food Logistics.jpg" },
+  { title: "Medical Logistics", href: "/industries/medical", image: "/Medical-logistic.jpg" },
+  { title: "Retail Freight", href: "/industries/retail", image: "/Retail Freight.jpg" },
+  
 ];
-
 
 /* ================= HEADER ================= */
 
 export default function Header() {
+  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  // desktop
+  // desktop mega menu
   const [megaOpen, setMegaOpen] = useState(false);
   const [activeTab, setActiveTab] =
     useState<"solutions" | "industries">("solutions");
 
-  // mobile
+  // mobile menu states
   const [mobileShippers, setMobileShippers] = useState(false);
   const [mobileSolutions, setMobileSolutions] = useState(false);
   const [mobileIndustries, setMobileIndustries] = useState(false);
 
+  /* ===== Scroll Detection ===== */
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 80);
+    };
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <>
-      {/* TOP BAR */}
-      <div className="fixed top-0 left-0 w-full h-1 bg-red-600 z-[60]" />
+      {/* TOP RED BAR */}
+      <div
+        className={`fixed top-0 left-0 w-full h-1 z-[60] transition-opacity
+          ${scrolled ? "opacity-100 bg-red-600" : "opacity-0"}
+        `}
+      />
 
-      <header className="fixed top-1 w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10">
+      {/* HEADER */}
+      <header
+        className={`
+          fixed top-0 w-full z-50 transition-all duration-300
+          ${scrolled
+            ? "bg-[#020202]/95 backdrop-blur-md border-b border-white/10"
+            : "bg-transparent"}
+        `}
+      >
         <div className="max-w-7xl mx-auto h-20 px-6 flex items-center justify-between">
 
           {/* LOGO */}
           <Link href="/">
             <Image
-              src="/logo-1.png"
+              src={scrolled ? "/logo-1.png" : "/logo bcs 1.png"}
               alt="Logo"
               width={220}
               height={80}
-              className="h-40 w-auto object-contain"
+              className="h-40 w-auto object-contain transition-all"
               priority
             />
           </Link>
@@ -121,48 +98,39 @@ export default function Header() {
               Home
             </Link>
 
-            {/* SHIPPERS (DESKTOP – FIXED) */}
-            <div className="relative"  onMouseEnter={() => setMegaOpen(true)}onMouseLeave={() => setMegaOpen(false)} >
-              {/* Trigger */}
-              <div className="flex items-center gap-1 cursor-pointer ">
+            {/* SHIPPERS */}
+            <div
+              className="relative"
+              onMouseEnter={() => setMegaOpen(true)}
+              onMouseLeave={() => setMegaOpen(false)}
+            >
+              <div className="flex items-center gap-1 cursor-pointer">
                 <Link href="/shipping-services" className="hover:text-red-400">
                   Shippers
                 </Link>
                 <ChevronDown size={16} />
               </div>
 
-              {/* 🔹 HOVER BUFFER (IMPORTANT) */}
-              {megaOpen && (
-                <div className="absolute left-0 top-full h-6 w-full" />
-              )}
+              {megaOpen && <div className="absolute left-0 top-full h-6 w-full" />}
 
-              {/* MEGA MENU */}
               {megaOpen && (
                 <div
-  className="
-    absolute
-    left-1/2
-    top-[calc(100%+1.5rem)]
-    -translate-x-1/2
-    w-[1100px]
-    max-w-[95vw]
-    px-10
-    bg-white
-    rounded-2xl
-    shadow-2xl
-    border
-    overflow-hidden
-  "
->
-  <div className="grid grid-cols-[260px_1fr]">
-
+                  className="
+                    absolute left-1/2 top-[calc(100%+1.5rem)]
+                    -translate-x-1/2
+                    w-[1100px] max-w-[100vw]
+                    px-10 bg-white rounded-2xl shadow-2xl border overflow-hidden
+                  "
+                >
+                  <div className="grid grid-cols-[260px_1fr]">
 
                     {/* SIDEBAR */}
                     <div className="bg-gray-50 p-6 border-r">
                       <button
                         onClick={() => setActiveTab("solutions")}
                         className={`block w-full text-left mb-4 text-lg font-semibold
-              ${activeTab === "solutions" ? "text-red-600" : "text-gray-700"}`}
+                          ${activeTab === "solutions" ? "text-red-600" : "text-gray-700"}
+                        `}
                       >
                         Transportation Solutions
                       </button>
@@ -170,13 +138,14 @@ export default function Header() {
                       <button
                         onClick={() => setActiveTab("industries")}
                         className={`block w-full text-left text-lg font-semibold
-              ${activeTab === "industries" ? "text-red-600" : "text-gray-700"}`}
+                          ${activeTab === "industries" ? "text-red-600" : "text-gray-700"}
+                        `}
                       >
                         Industries
                       </button>
                     </div>
 
-                    {/* IMAGE GRID */}
+                    {/* GRID */}
                     <div className="p-6 grid grid-cols-4 gap-5">
                       {(activeTab === "solutions" ? solutions : industries).map(
                         (item) => (
@@ -194,34 +163,24 @@ export default function Header() {
                               />
                               <div className="absolute inset-0 bg-black/25 group-hover:bg-black/10 transition" />
                             </div>
-
-                <div className="p-3 text-sm font-semibold text-gray-900 text-center">
+                            <div className="p-3 text-sm font-semibold text-gray-900 text-center">
                               {item.title}
                             </div>
                           </Link>
                         )
                       )}
                     </div>
+
                   </div>
                 </div>
               )}
             </div>
 
-            <Link href="/carriers" className="hover:text-red-400">
-              Carriers
-            </Link>
-            <Link href="/agents" className="hover:text-red-400">
-              Agents
-            </Link>
-            <Link href="/technology" className="hover:text-red-400">
-              Technology
-            </Link>
-            <Link href="/about" className="hover:text-red-400">
-              About Us
-            </Link>
-            <Link href="/blog" className="hover:text-red-400">
-              Blog
-            </Link>
+            <Link href="/carriers" className="hover:text-red-400">Carriers</Link>
+            <Link href="/agents" className="hover:text-red-400">Agents</Link>
+            <Link href="/technology" className="hover:text-red-400">Technology</Link>
+            <Link href="/about" className="hover:text-red-400">About Us</Link>
+            <Link href="/blog" className="hover:text-red-400">Blog</Link>
           </nav>
 
           {/* CTA */}
@@ -253,89 +212,51 @@ export default function Header() {
             </button>
           </div>
 
-          <Link href="/" className="block text-lg font-semibold py-3">
-            Home
-          </Link>
+          <Link href="/" className="block text-lg font-semibold py-3">Home</Link>
 
-          {/* SHIPPERS */}
           <button
             onClick={() => setMobileShippers(!mobileShippers)}
             className="w-full flex justify-between items-center text-lg font-semibold py-3"
           >
             Shippers
-            <ChevronDown
-              className={`transition ${mobileShippers ? "rotate-180" : ""}`}
-            />
+            <ChevronDown className={`transition ${mobileShippers ? "rotate-180" : ""}`} />
           </button>
 
           {mobileShippers && (
             <div className="ml-4 mt-2">
-
-              {/* SOLUTIONS */}
               <button
                 onClick={() => setMobileSolutions(!mobileSolutions)}
                 className="flex justify-between w-full py-2 font-semibold"
               >
                 Transportation Solutions
-                <ChevronDown
-                  className={`transition ${mobileSolutions ? "rotate-180" : ""
-                    }`}
-                />
+                <ChevronDown className={`transition ${mobileSolutions ? "rotate-180" : ""}`} />
               </button>
 
               {mobileSolutions &&
                 solutions.map((item) => (
-                  <Link
-                    key={item.title}
-                    href={item.href}
-                    className="block py-1 ml-4"
-                  >
+                  <Link key={item.title} href={item.href} className="block py-1 ml-4">
                     {item.title}
                   </Link>
                 ))}
 
-              {/* INDUSTRIES */}
               <button
                 onClick={() => setMobileIndustries(!mobileIndustries)}
                 className="flex justify-between w-full py-2 font-semibold mt-4"
               >
                 Industries
-                <ChevronDown
-                  className={`transition ${mobileIndustries ? "rotate-180" : ""
-                    }`}
-                />
+                <ChevronDown className={`transition ${mobileIndustries ? "rotate-180" : ""}`} />
               </button>
 
               {mobileIndustries &&
                 industries.map((item) => (
-                  <Link
-                    key={item.title}
-                    href={item.href}
-                    className="block py-1 ml-4"
-                  >
+                  <Link key={item.title} href={item.href} className="block py-1 ml-4">
                     {item.title}
                   </Link>
                 ))}
             </div>
           )}
 
-          {/* OTHER LINKS */}
-          {["Carriers", "Agents", "Technology", "About Us", "Blog"].map(
-            (item) => (
-              <Link
-                key={item}
-                href={`/${item.toLowerCase().replace(" ", "-")}`}
-                className="block text-lg font-semibold py-3"
-              >
-                {item}
-              </Link>
-            )
-          )}
-
-          <Link
-            href="/contact"
-            className="block mt-8 bg-red-600 text-center py-4 rounded-full font-semibold"
-          >
+          <Link href="/contact" className="block mt-8 bg-red-600 text-center py-4 rounded-full font-semibold">
             Get a Quote
           </Link>
         </div>

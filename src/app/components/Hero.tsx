@@ -18,9 +18,9 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[#2f3f67]/90" />
 
       {/* Watermark Logo */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-40">
+      <div className="absolute inset-0 flex items-center justify-center opacity-30">
         <Image
-          src="/logo-1.png" 
+          src="/logo bcs 1.png" 
           alt="Brand Logo"
           width={520}
           height={300}
