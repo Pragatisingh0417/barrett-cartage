@@ -263,7 +263,7 @@ export default function Header() {
             <Link href="/agents" className="hover:text-red-400">Agents</Link>
             <Link href="/technology" className="hover:text-red-400">Technology</Link>
             <Link href="/about" className="hover:text-red-400">About Us</Link>
-            <Link href="/blog" className="hover:text-red-400">Blog</Link>
+            <Link href="/linkedin.com/company/barrett-cartage-systems-inc." target="blank" className="hover:text-red-400">Linkedin</Link>
           </nav>
 
           {/* CTA */}
