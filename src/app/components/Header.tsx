@@ -7,32 +7,79 @@ import { Menu, X, ChevronDown } from "lucide-react";
 
 /* ================= DATA ================= */
 
+
+
 const solutions = [
   { title: "Less Than Truckload", href: "/shipping-services/ltl-shipping", image: "/LTL-image.jpg" },
-  { title: "Full Truckload", href: "/services/ftl", image: "/FTL-image.jpg" },
-  { title: "Expedited", href: "/services/expedited", image: "/Expedited-image.jpg" },
-  { title: "Partial Truckload", href: "/services/partial-truckload", image: "/Partial Truckload.jpg" },
-  { title: "Drayage Freight", href: "/services/drayage", image: "/Drayage Freight-image.jpg" },
-  { title: "Cross-Border Shipping", href: "/services/cross-border", image: "/Cross-Border Freight Shipping.jpg" },
-  { title: "International Air", href: "/services/international-air", image: "/International-air.jpg" },
-  { title: "Trade Show Shipping", href: "/services/trade-show", image: "/trade Show Shipping.jpg" },
-    { title: "DHL Express ", href: "/services/trade-show", image: "/DHL Express.jpg" },
-        { title: "Flatbed Transportation Services ", href: "/services/trade-show", image: "/Flatbed Transportation Services.jpg" },
+  { title: "Full Truckload", href: "/shipping-services/ftl-shipping", image: "/FTL-image.jpg" },
+  { title: "Expedited", href: "/shipping-services/expedited-shipping", image: "/Expedited-image.jpg" },
+  { title: "Partial Truckload", href: "/shipping-services/partial-truckload", image: "/Partial Truckload.jpg" },
+  { title: "Drayage Freight", href: "/shipping-services/drayage-freight-solutions", image: "/Drayage Freight-image.jpg" },
+  { title: "Cross-Border Shipping", href: "/shipping-services/cross-border", image: "/Cross-Border Freight Shipping.jpg" },
+  { title: "International Air", href: "/shipping-services/international-air-freight", image: "/International-air.jpg" },
+  { title: "Trade Show Shipping", href: "/shipping-services/trade-show-shipping", image: "/trade Show Shipping.jpg" },
+  { title: "DHL Express ", href: "/shipping-services/trade-show", image: "/DHL Express.jpg" },
+  { title: "Flatbed Transportation Services ", href: "/shipping-services/flatbed-transportation-solutions", image: "/Flatbed Transportation Services.jpg" },
 
-            { title: "Temperature Controlled Freight Shipping ", href: "/services/trade-show", image: "/Temperature Controlled Freight Shipping.jpg" },
+  { title: "Temperature Controlled Freight Shipping ", href: "/shipping-services/trade-show", image: "/Temperature Controlled Freight Shipping.jpg" },
 
 
-  
+
 ];
 
 const industries = [
-  { title: "Aerospace Logistics", href: "/industries/aerospace", image: "/Aerospace Logistics.jpg" },
-  { title: "Pharmaceutical Transport", href: "/industries/pharmaceutical", image: "/Pharmaceutical Logistics.jpg" },
-  { title: "Food Transportation", href: "/industries/food", image: "/Food Logistics.jpg" },
-  { title: "Medical Logistics", href: "/industries/medical", image: "/Medical-logistic.jpg" },
-  { title: "Retail Freight", href: "/industries/retail", image: "/Retail Freight.jpg" },
-  
+  {
+    title: "Aerospace Logistics",
+    image: "/Aerospace Logistics.jpg",
+  },
+  {
+    title: "Pharmaceutical Transport",
+    image: "/Pharmaceutical Logistics.jpg",
+  },
+  {
+    title: "Food & Beverage",
+    image: "/Food Logistics.jpg",
+  },
+  {
+    title: "Medical Logistics",
+    image: "/Medical-logistic.jpg",
+  },
+  {
+    title: "Retail Freight",
+    image: "/Retail Freight.jpg",
+  },
+  {
+    title: "Oil & Gas",
+    image: "/image-8.jpg",
+  },
+  {
+    title: "Tradeshow",
+    image: "/image-6.jpg",
+  },
 ];
+
+const industryContent = {
+  "Aerospace Logistics":
+    "Transporting aerospace components demands precision, security, and compliance. We specialize in shipping sensitive aircraft parts, engines, and composite materials with strict handling protocols.  Our service includes climate-controlled environments, secure chain-of-custody, and expedited transit options to meet tight production or maintenance schedules.  With expertise in hazmat and oversized cargo, we ensure your aerospace freight arrives safely and on time, compliant with industry regulations.",
+
+  "Pharmaceutical Transport":
+    "Ensure the integrity of your pharmaceutical products with our GDP-compliant, temperature-controlled logistics.  We provide 24/7 monitoring, validated packaging, and cold chain solutions for vaccines, biologics, and clinical trial materials.  Our secure, trackable shipments maintain precise temperature ranges from -25°F to 70°F, meeting FDA and FSMA standards. From lab to pharmacy, we protect product efficacy and compliance",
+
+  "Food & Beverage":
+    "Keep your perishable goods fresh with our refrigerated and frozen transport solutions.  We maintain strict temperature control for dairy, meat, produce, and beverages, ensuring food safety and compliance with FSMA and HACCP standards.  Our dedicated reefer trailers and sanitized equipment prevent cross-contamination, while just-in-time delivery supports retail and distribution needs",
+
+  "Medical Logistics":
+    "We deliver reliable transportation for medical devices, diagnostic equipment, and hospital supplies. Our fleet supports white-glove delivery, liftgate service, and inside delivery for sensitive installations.  With real-time tracking and HIPAA-compliant handling, we ensure critical medical freight reaches healthcare facilities safely, on schedule, and ready for use.",
+
+  "Retail Freight":
+    "Support your retail supply chain with timely, damage-free delivery of merchandise, fixtures, and seasonal inventory. We offer flexible LTL and FTL options, final-mile delivery, and store-ready packaging. Our network ensures on-time in-full (OTIF) performance for distribution centers and retail locations, helping you meet consumer demand. ",
+"Oil & Gas": 
+"We handle the unique demands of the energy sector with hazmat-certified transport for drilling equipment, pipes, valves, and chemicals. Our team manages oversized and heavy-haul loads with proper permitting, expedited routing, and safety-compliant handling.  Whether onshore or offshore, we deliver reliable logistics for upstream, midstream, and downstream operations.",
+
+"Tradeshow":
+"Simplify your event logistics with our end-to-end tradeshow freight services.  We manage pickup, packaging, transportation, and delivery of exhibit materials to venues nationwide.  With white-glove handling, on-site coordination, and reverse logistics, we ensure your booth is set up on time and stress-free.  Trust us to handle your time-critical show shipments with precision."
+
+  };
 
 /* ================= HEADER ================= */
 
@@ -50,6 +97,12 @@ export default function Header() {
   const [mobileSolutions, setMobileSolutions] = useState(false);
   const [mobileIndustries, setMobileIndustries] = useState(false);
 
+
+
+  const [selectedIndustry, setSelectedIndustry] = useState<{
+    title: string;
+    content: string;
+  } | null>(null);
   /* ===== Scroll Detection ===== */
   useEffect(() => {
     const onScroll = () => {
@@ -147,28 +200,58 @@ export default function Header() {
 
                     {/* GRID */}
                     <div className="p-6 grid grid-cols-4 gap-5">
-                      {(activeTab === "solutions" ? solutions : industries).map(
-                        (item) => (
-                          <Link
-                            key={item.title}
-                            href={item.href}
-                            className="group rounded-xl overflow-hidden bg-gray-100 hover:shadow-lg transition"
-                          >
-                            <div className="relative h-28">
-                              <Image
-                                src={item.image}
-                                alt={item.title}
-                                fill
-                                className="object-cover"
-                              />
-                              <div className="absolute inset-0 bg-black/25 group-hover:bg-black/10 transition" />
-                            </div>
-                            <div className="p-3 text-sm font-semibold text-gray-900 text-center">
-                              {item.title}
-                            </div>
-                          </Link>
-                        )
-                      )}
+{activeTab === "solutions" &&
+  solutions.map((item) => (
+    <Link
+      key={item.title}
+      href={item.href}
+      className="group rounded-xl overflow-hidden bg-gray-100 hover:shadow-lg transition"
+    >
+      <div className="relative h-28">
+        <Image
+          src={item.image}
+          alt={item.title}
+          fill
+          className="object-cover"
+        />
+      </div>
+
+      <div className="p-3 text-sm font-semibold text-gray-900 text-center">
+        {item.title}
+      </div>
+    </Link>
+  ))}
+
+
+  {activeTab === "industries" &&
+  industries.map((item) => (
+    <button
+      key={item.title}
+      onClick={() =>
+        setSelectedIndustry({
+          title: item.title,
+          content:
+            industryContent[
+              item.title as keyof typeof industryContent
+            ],
+        })
+      }
+      className="group rounded-xl overflow-hidden bg-gray-100 hover:shadow-lg transition"
+    >
+      <div className="relative h-28">
+        <Image
+          src={item.image}
+          alt={item.title}
+          fill
+          className="object-cover"
+        />
+      </div>
+
+      <div className="p-3 text-sm font-semibold text-gray-900 text-center">
+        {item.title}
+      </div>
+    </button>
+  ))}
                     </div>
 
                   </div>
@@ -249,9 +332,22 @@ export default function Header() {
 
               {mobileIndustries &&
                 industries.map((item) => (
-                  <Link key={item.title} href={item.href} className="block py-1 ml-4">
+                  <button
+                    key={item.title}
+                    onClick={() => {
+                      setSelectedIndustry({
+                        title: item.title,
+                        content:
+                          industryContent[
+                          item.title as keyof typeof industryContent
+                          ],
+                      });
+                      setMobileOpen(false);
+                    }}
+                    className="block py-1 ml-4 text-left"
+                  >
                     {item.title}
-                  </Link>
+                  </button>
                 ))}
             </div>
           )}
@@ -261,6 +357,35 @@ export default function Header() {
           </Link>
         </div>
       )}
+
+
+
+
+
+      {selectedIndustry && (
+        <div className="fixed inset-0 z-[999] bg-black/70 flex items-center justify-center p-4">
+          <div className="bg-white max-w-3xl w-full rounded-2xl p-8 relative shadow-2xl">
+
+            <button
+              onClick={() => setSelectedIndustry(null)}
+              className="absolute top-4 right-4 text-gray-700"
+            >
+              <X size={24} />
+            </button>
+
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              {selectedIndustry.title}
+            </h2>
+
+            <div className="text-gray-700 leading-relaxed">
+              {selectedIndustry.content}
+            </div>
+
+          </div>
+        </div>
+      )}
     </>
   );
 }
+
+

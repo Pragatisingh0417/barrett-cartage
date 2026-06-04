@@ -3,14 +3,13 @@
 import GetInTouch from "@/app/components/GetInTouch";
 import { motion } from "framer-motion";
 
-export default function LtlShipping() {
+export default function FTLShipping() {
   return (
     <main className="bg-white">
 
       {/* ================= HERO SECTION ================= */}
-     {/* ================= HERO SECTION ================= */}
       <section className=" relative min-h-[55vh] md:min-h-[90vh] flex items-center bg-cover bg-center pt-24 md:pt-28"
-        style={{ backgroundImage: "url('/truck-1.jpg')" }}>
+        style={{ backgroundImage: "url('/image-1.jpg')" }}>
         <div className="absolute inset-0 bg-black/60" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,7 +20,7 @@ export default function LtlShipping() {
               animate={{ opacity: 1, y: 0 }}
               className="inline-block mb-4 px-3 py-2 md:px-4 bg-red-600 text-xs sm:text-sm font-semibold rounded-full">
 
-              LTL Freight Services
+              FTL Freight Services
             </motion.span>
 
             <motion.h1
@@ -29,7 +28,8 @@ export default function LtlShipping() {
               animate={{ opacity: 1, y: 0 }}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
 
-Less Than Truckload (LTL) Shipping            </motion.h1>
+              Full  Truckload (FTL) Shipping
+            </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -66,22 +66,19 @@ Less Than Truckload (LTL) Shipping            </motion.h1>
 
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              What Is LTL Shipping?
+              What Is FTL Shipping?
             </h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              Less Than Truckload (LTL) shipping is ideal for businesses that need to
-              transport freight without filling an entire truck. Your shipment shares
-              space with other freight, reducing costs while maintaining reliability.
+              When your shipment demands the entire trailer, our Full Truckload (FTL) service delivers unmatched speed, security, and control.  From box trucks to 53' trailers, we provide dedicated capacity for large-volume, time-sensitive, or high-value freight ensuring your cargo travels directly from origin to destination with no stops, no transfers, and minimal handling.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              Our LTL solutions are designed to deliver flexibility, predictable transit
-              times, and complete visibility from pickup to delivery.
+              Our FTL solutions are built for scale and versatility, supporting drayage, hot shots, tradeshow logistics, and full-scale distribution with 2–4 men teams for complex deliveries. Every driver is TSA-certified, guaranteeing secure, compliant handling, especially critical for air cargo, sensitive materials, and secure facilities.
             </p>
           </div>
 
           <div className="bg-gray-100 rounded-2xl p-10 shadow-sm">
             <ul className="space-y-4 font-medium text-gray-800">
-              <li>✔ Nationwide LTL coverage</li>
+              <li>✔ Nationwide FTL coverage</li>
               <li>✔ Competitive freight pricing</li>
               <li>✔ Reliable transit times</li>
               <li>✔ Real-time shipment tracking</li>
@@ -96,7 +93,7 @@ Less Than Truckload (LTL) Shipping            </motion.h1>
         <div className="max-w-7xl mx-auto px-6">
 
           <h2 className="text-center text-3xl md:text-4xl font-bold mb-14">
-            Why Choose Our LTL Services?
+            Why Choose Our FTL Services?
           </h2>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -141,7 +138,7 @@ Less Than Truckload (LTL) Shipping            </motion.h1>
         <div className="max-w-7xl mx-auto px-6">
 
           <h2 className="text-center text-3xl md:text-4xl font-bold mb-14">
-            How Our LTL Shipping Works
+            How Our FTL Shipping Works
           </h2>
 
           <div className="grid md:grid-cols-4 gap-8 text-center">
@@ -164,9 +161,9 @@ Less Than Truckload (LTL) Shipping            </motion.h1>
         </div>
       </section>
 
-      
-<GetInTouch />
-{/* ================= CTA ================= */}
+
+      <GetInTouch />
+      {/* ================= CTA ================= */}
       <section className="bg-red-600 py-16">
         <div className="max-w-7xl mx-auto px-6 text-center text-white">
 
@@ -174,7 +171,7 @@ Less Than Truckload (LTL) Shipping            </motion.h1>
             Ready to Ship Smarter?
           </h2>
           <p className="mb-8 text-lg">
-            Get a fast, competitive quote for your LTL shipment today.
+            Get a fast, competitive quote for your FTL shipment today.
           </p>
           <a
             href="/contact"

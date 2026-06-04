@@ -2,15 +2,15 @@
 
 import GetInTouch from "@/app/components/GetInTouch";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
-export default function LtlShipping() {
+export default function DrayageShipping() {
   return (
     <main className="bg-white">
 
       {/* ================= HERO SECTION ================= */}
-     {/* ================= HERO SECTION ================= */}
       <section className=" relative min-h-[55vh] md:min-h-[90vh] flex items-center bg-cover bg-center pt-24 md:pt-28"
-        style={{ backgroundImage: "url('/truck-1.jpg')" }}>
+        style={{ backgroundImage: "url('/image-2.jpg')" }}>
         <div className="absolute inset-0 bg-black/60" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,15 +21,14 @@ export default function LtlShipping() {
               animate={{ opacity: 1, y: 0 }}
               className="inline-block mb-4 px-3 py-2 md:px-4 bg-red-600 text-xs sm:text-sm font-semibold rounded-full">
 
-              LTL Freight Services
-            </motion.span>
+Drayage Freight Solutions            </motion.span>
 
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
 
-Less Than Truckload (LTL) Shipping            </motion.h1>
+Drayage Freight Solutions            </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -66,25 +65,27 @@ Less Than Truckload (LTL) Shipping            </motion.h1>
 
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              What Is LTL Shipping?
+              What Is Drayage Freight Solutions?
             </h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              Less Than Truckload (LTL) shipping is ideal for businesses that need to
-              transport freight without filling an entire truck. Your shipment shares
-              space with other freight, reducing costs while maintaining reliability.
+We provide fast, reliable drayage services connecting the Port of Houston—including Barbours Cut and Bayport Container Terminals—with major Houston rail yards and regional distribution centers.  As a critical hub for U.S. foreign waterborne tonnage, the Port of Houston handles millions of TEUs annually, serving the energy, chemical, and manufacturing sectors.             </p>
+            <p className="text-gray-600 leading-relaxed">
+Our drayage operations ensure seamless movement of containers between port terminals and Union Pacific (UP) and BNSF rail ramps, supporting efficient intermodal freight transfers.  With TWIC-certified drivers, UIIA-compliant chassis access, and expertise in hazmat and temperature-sensitive cargo, we deliver fast turnarounds, minimize dwell time, and help avoid demurrage and detention fees. 
             </p>
             <p className="text-gray-600 leading-relaxed">
-              Our LTL solutions are designed to deliver flexibility, predictable transit
-              times, and complete visibility from pickup to delivery.
+                Whether it’s import/export container moves, rail-to-door drayage, or expedited port pulls, we’re built to keep your supply chain moving through the heart of Texas logistics.
+
             </p>
           </div>
 
           <div className="bg-gray-100 rounded-2xl p-10 shadow-sm">
             <ul className="space-y-4 font-medium text-gray-800">
-              <li>✔ Nationwide LTL coverage</li>
-              <li>✔ Competitive freight pricing</li>
-              <li>✔ Reliable transit times</li>
-              <li>✔ Real-time shipment tracking</li>
+              <li>✔ NO cross-border shipping tab
+</li>
+              <li>✔ NO Agents tab
+</li>
+              <li>✔ NO DHL tab
+</li>
             </ul>
           </div>
 
@@ -96,7 +97,7 @@ Less Than Truckload (LTL) Shipping            </motion.h1>
         <div className="max-w-7xl mx-auto px-6">
 
           <h2 className="text-center text-3xl md:text-4xl font-bold mb-14">
-            Why Choose Our LTL Services?
+            Why Choose Our Drayage Freight Solutions Services?
           </h2>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -138,35 +139,41 @@ Less Than Truckload (LTL) Shipping            </motion.h1>
 
       {/* ================= PROCESS SECTION ================= */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
 
-          <h2 className="text-center text-3xl md:text-4xl font-bold mb-14">
-            How Our LTL Shipping Works
-          </h2>
+  <div className="bg-gray-100 rounded-2xl p-6 shadow-sm">
+      <Image
+        src="/image-3.jpeg" 
+        alt="Drayage Shipping"
+        width={600}
+        height={400}
+        className="rounded-xl object-cover w-full h-full"
+      />
+    </div>
 
-          <div className="grid md:grid-cols-4 gap-8 text-center">
 
-            {[
-              "Request a Quote",
-              "Schedule Pickup",
-              "Freight Consolidation",
-              "On-Time Delivery",
-            ].map((step, i) => (
-              <div key={i} className="p-6">
-                <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full bg-red-600 text-white font-bold">
-                  {i + 1}
-                </div>
-                <p className="font-semibold">{step}</p>
-              </div>
-            ))}
-
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+Not Getting the Support You Need with Your Drayage Shipments?            </h2>
+            <p className="text-gray-600 leading-relaxed">
+    Having been in business for over years, we’ve had countless conversations with shippers frustrated by freight providers who fail to prioritize their needs—missed updates, unanswered calls, and service that makes them feel like just another number in the system.
+</p>
+            <p className="text-gray-600 leading-relaxed mb-4 mt-2">
+At Diversified Transportation Services, we partner with you to solve your partial drayage shipping challenges, becoming an extension of your traffic department. Our goal is to leverage our decades of expertise in freight transportation to streamline your operations, allowing you to focus on what truly matters—running your business.         </p>
+            <p className="text-gray-600 leading-relaxed">
+Our drayage operations ensure seamless movement of containers between port terminals and Union Pacific (UP) and BNSF rail ramps, supporting efficient intermodal freight transfers.  With TWIC-certified drivers, UIIA-compliant chassis access, and expertise in hazmat and temperature-sensitive cargo, we deliver fast turnarounds, minimize dwell time, and help avoid demurrage and detention fees. 
+            </p>
+            
           </div>
+
+         
+
         </div>
       </section>
 
-      
-<GetInTouch />
-{/* ================= CTA ================= */}
+
+      <GetInTouch />
+      {/* ================= CTA ================= */}
       <section className="bg-red-600 py-16">
         <div className="max-w-7xl mx-auto px-6 text-center text-white">
 
@@ -174,7 +181,7 @@ Less Than Truckload (LTL) Shipping            </motion.h1>
             Ready to Ship Smarter?
           </h2>
           <p className="mb-8 text-lg">
-            Get a fast, competitive quote for your LTL shipment today.
+            Get a fast, competitive quote for your Drayage Freight Solutions today.
           </p>
           <a
             href="/contact"
