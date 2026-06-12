@@ -12,7 +12,7 @@ export default function Hero() {
         flex items-center justify-center
         bg-cover bg-center
       "
-      style={{ backgroundImage: "url('/banner-3.jpg')" }}
+      style={{ backgroundImage: "url('/image-1.jpg')" }}
     >
       {/* Solid Brand Overlay (replace color if needed) */}
       <div className="absolute inset-0 bg-[#2f3f67]/90" />
