@@ -10,7 +10,7 @@ export default function ContactPage() {
       {/* ================= HERO ================= */}
       <section
         className="relative min-h-[80vh] flex items-center bg-cover bg-center"
-        style={{ backgroundImage: "url('/banner-3.jpg')" }}
+        style={{ backgroundImage: "url('/image-6.jpg')" }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-black/40" />
 
@@ -41,17 +41,18 @@ with confidence and reliability.
 
     <div className="bg-white p-8 rounded-2xl shadow">
       <h3 className="font-semibold text-lg mb-2">Call Us</h3>
-      <p className="text-gray-600">+1 713-408-6521</p>
+      <p className="text-gray-600">+1 281-442-1100</p>
     </div>
 
     <div className="bg-white p-8 rounded-2xl shadow">
       <h3 className="font-semibold text-lg mb-2">Email</h3>
-      <p className="text-gray-600">Matt@barrettcartage.com</p>
+      <p className="text-gray-600">Operations@barrettcartage.com</p>
     </div>
 
     <div className="bg-white p-8 rounded-2xl shadow">
-      <h3 className="font-semibold text-lg mb-2">Office Hours</h3>
-      <p className="text-gray-600">Mon – Fri, 9:00 AM – 6:00 PM</p>
+      <h3 className="font-semibold text-lg mb-2">Address</h3>
+      <p className="text-gray-600">18951 Kenswick Drive, Suite 120
+Humble, TX 77338</p>
     </div>
 
   </div>

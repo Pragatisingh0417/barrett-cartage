@@ -10,7 +10,7 @@ export default function AboutBarrettCartage() {
       {/* ================= HERO WITH BG IMAGE ================= */}
       <section
         className="relative min-h-[80vh] flex items-center bg-cover bg-center"
-        style={{ backgroundImage: "url('/banner-2.jpg')" }}
+        style={{ backgroundImage: "url('/image-1.jpg')" }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-black/40" />
 

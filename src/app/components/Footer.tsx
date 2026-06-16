@@ -96,23 +96,23 @@ export default function Footer() {
             <li className="flex gap-3">
               <MapPin size={18} className="text-red-500" />
               <span>
-                123 Logistics Way<br />
-                Chicago, IL 60601
+                18951 Kenswick Drive, Suite 120<br />
+                Humble, TX 77338
+
               </span>
             </li>
 
             <li className="flex gap-3">
               <Phone size={18} className="text-red-500" />
               <Link href="tel:+1234567890" className="hover:text-white">
-                +1 (234) 567-890
+                +1  281-442-1100
               </Link>
             </li>
 
             <li className="flex gap-3">
               <Mail size={18} className="text-red-500" />
               <Link href="mailto:sales@yourcompany.com" className="hover:text-white">
-                sales@yourcompany.com
-              </Link>
+Operations@barrettcartage.com              </Link>
             </li>
           </ul>
         </div>
