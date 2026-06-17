@@ -265,7 +265,7 @@ export default function Header() {
             <Link href="/contact" className="hover:text-red-400">Contact Us</Link>
 
             <Link
-              href="https://www.linkedin.com/company/barrett-cartage-systems-inc/"
+              href="https://www.linkedin.com/company/barrett-cartage-systems-inc./"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-red-400"
