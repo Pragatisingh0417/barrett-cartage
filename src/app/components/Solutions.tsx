@@ -17,37 +17,37 @@ const solutions = [
     title: "Less Than Truckload",
     desc: "Leverage our extensive carrier network to find the perfect LTL option, saving you time and money with reliable service and personalized support.",
     icon: Truck,
-    link: "/services/ltl",
+    link: "/shipping-services/ltl-shipping",
   },
   {
     title: "Full Truckload",
     desc: "We work hand in hand with you to pair our carrier network with your consistent FTL moves.",
     icon: TruckIcon,
-    link: "/services/ftl",
+    link: "/shipping-services/ftl-shipping",
   },
-  {
-    title: "Partial Truckload",
-    desc: "For your 4+ pallet shipments, our volume and partial truckload carriers deliver competitive pricing and tailored solutions.",
-    icon: Boxes,
-    link: "/services/partial-truckload",
-  },
+  // {
+  //   title: "Partial Truckload",
+  //   desc: "For your 4+ pallet shipments, our volume and partial truckload carriers deliver competitive pricing and tailored solutions.",
+  //   icon: Boxes,
+  //   link: "/services/partial-truckload",
+  // },
   {
     title: "Expedited",
     desc: "For your most time-sensitive shipments, we collaborate with top-tier expedited carriers to keep freight moving fast.",
     icon: Zap,
-    link: "/services/expedited",
+    link: "/shipping-services/expedited-shipping",
   },
   {
     title: "Trade Show",
     desc: "We coordinate with trusted carriers to deliver your trade show freight exactly when and where you need it.",
     icon: Presentation,
-    link: "/services/trade-show",
+    link: "/shipping-services/trade-show-shipping",
   },
   {
     title: "International Air",
     desc: "Navigate global shipping with ease—our international air solutions connect you with reliable carriers worldwide.",
     icon: Plane,
-    link: "/services/international-air",
+    link: "/shipping-services/international-air-freight",
   },
 ];
 
@@ -140,7 +140,7 @@ export default function Solutions() {
         </div>
 
         {/* CTA */}
-        <div className="mt-16 text-center">
+        {/* <div className="mt-16 text-center">
           <Link
             href="/services"
             className="inline-flex items-center gap-3 px-8 py-3 rounded-full bg-red-600 text-white font-semibold hover:bg-red-700 transition"
@@ -148,7 +148,7 @@ export default function Solutions() {
             View All Solutions
             <ArrowRight size={18} />
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   );

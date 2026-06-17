@@ -15,7 +15,7 @@ const solutions = [
   { title: "Expedited", href: "/shipping-services/expedited-shipping", image: "/Expedited-image.jpg" },
   // { title: "Partial Truckload", href: "/shipping-services/partial-truckload", image: "/Partial Truckload.jpg" },
   { title: "Drayage Freight", href: "/shipping-services/drayage-freight-solutions", image: "/Drayage Freight-image.jpg" },
-  { title: "Cross-Border Shipping", href: "/shipping-services/cross-border", image: "/Cross-Border Freight Shipping.jpg" },
+  // { title: "Cross-Border Shipping", href: "/shipping-services/cross-border", image: "/Cross-Border Freight Shipping.jpg" },
   { title: "International Air", href: "/shipping-services/international-air-freight", image: "/International-air.jpg" },
   { title: "Trade Show Shipping", href: "/shipping-services/trade-show-shipping", image: "/trade Show Shipping.jpg" },
   // { title: "DHL Express ", href: "/shipping-services/trade-show", image: "/DHL Express.jpg" },
@@ -261,7 +261,6 @@ export default function Header() {
 
             {/* <Link href="/carriers" className="hover:text-red-400">Carriers</Link>
             <Link href="/agents" className="hover:text-red-400">Agents</Link> */}
-            {/* <Link href="/technology" className="hover:text-red-400">Technology</Link> */}
             <Link href="/about" className="hover:text-red-400">About Us</Link>
             <Link href="/contact" className="hover:text-red-400">Contact Us</Link>
 

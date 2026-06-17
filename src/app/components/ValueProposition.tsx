@@ -73,7 +73,7 @@ export default function ValueProposition() {
               </Link>
 
               <Link
-                href="/services"
+                href="/about"
                 className="inline-flex items-center gap-2 border border-gray-300 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition"
               >
                 Leverage Our Expertise
