@@ -10,11 +10,11 @@ import { Menu, X, ChevronDown } from "lucide-react";
 
 
 const solutions = [
-  { title: "Less Than Truckload", href: "/shipping-services/ltl-shipping", image: "/image-6.jpg" },
-  { title: "Full Truckload", href: "/shipping-services/ftl-shipping", image: "/FTL-image.jpg" },
+  { title: "Less Than Truckload", href: "/shipping-services/ltl-shipping", image: "/LTL-image-1.jpg" },
+  { title: "Full Truckload", href: "/shipping-services/ftl-shipping", image: "/image-1.jpg" },
   { title: "Expedited", href: "/shipping-services/expedited-shipping", image: "/Expedited-image.jpg" },
   // { title: "Partial Truckload", href: "/shipping-services/partial-truckload", image: "/Partial Truckload.jpg" },
-  { title: "Drayage Freight", href: "/shipping-services/drayage-freight-solutions", image: "/Drayage Freight-image.jpg" },
+  { title: "Drayage Freight", href: "/shipping-services/drayage-freight-solutions", image: "/image-4.jpg" },
   // { title: "Cross-Border Shipping", href: "/shipping-services/cross-border", image: "/Cross-Border Freight Shipping.jpg" },
   { title: "International Air", href: "/shipping-services/international-air-freight", image: "/International-air.jpg" },
   { title: "Trade Show Shipping", href: "/shipping-services/trade-show-shipping", image: "/trade Show Shipping.jpg" },

@@ -158,7 +158,7 @@ export default function AboutBarrettCartage() {
       {/* ================= CTA WITH BG IMAGE ================= */}
       <section
         className="relative py-24 bg-cover bg-center"
-        style={{ backgroundImage: "url('/banner-2.jpg')" }}
+        style={{ backgroundImage: "url('/image-1.jpg')" }}
       >
         <div className="absolute inset-0 bg-red-600/80" />
 
