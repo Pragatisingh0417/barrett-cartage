@@ -9,7 +9,7 @@ export default function FTLShipping() {
 
       {/* ================= HERO SECTION ================= */}
       <section className=" relative min-h-[55vh] md:min-h-[90vh] flex items-center bg-cover bg-center pt-24 md:pt-28"
-        style={{ backgroundImage: "url('/image-1.jpg')" }}>
+        style={{ backgroundImage: "url('/ftl-image-2.webp')" }}>
         <div className="absolute inset-0 bg-black/60" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -11,7 +11,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 
 const solutions = [
   { title: "Less Than Truckload", href: "/shipping-services/ltl-shipping", image: "/LTL-image-1.jpg" },
-  { title: "Full Truckload", href: "/shipping-services/ftl-shipping", image: "/image-1.jpg" },
+  { title: "Full Truckload", href: "/shipping-services/ftl-shipping", image: "/ftl-image-1.jpg" },
   { title: "Expedited", href: "/shipping-services/expedited-shipping", image: "/Expedited-image.jpg" },
   // { title: "Partial Truckload", href: "/shipping-services/partial-truckload", image: "/Partial Truckload.jpg" },
   { title: "Drayage Freight", href: "/shipping-services/drayage-freight-solutions", image: "/image-4.jpg" },
